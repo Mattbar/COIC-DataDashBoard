@@ -10,7 +10,7 @@ class App extends Component {
           <h2>Data DashBoard</h2>
         </div>
         <div>
-          <BarChart data={[5,8,1,3]} size={[500, 500]}/>
+          <BarChart data={[5,8,1,3,10,23,15]} size={[500, 500]}/>
         </div>
       </div>
     );
