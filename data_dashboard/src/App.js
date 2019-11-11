@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BarChart from './barCharts/BarChart'
 import './App.css';
 
+const CENSUS_KEY = 'THIS IS A TEST'
 class App extends Component {
   render() {
     return (
