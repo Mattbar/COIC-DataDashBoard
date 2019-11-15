@@ -34,13 +34,21 @@ const CROOK = '013'
 const JEFFERSON = '031'
 
 var FINAL_URL = BASE_URL 
-				+ GET + MED_INCOME + COMMA + MED_GROSS_RENT_DOLLARS 
-				+ FOR + COUNTY + JEFFERSON 
+				+ GET + GROSS_RENT_TOTAL 
+				+ COMMA + GROSS_RENT_PERCENT_INCOME_30_34
+				+ COMMA + GROSS_RENT_PERCENT_INCOME_35_39
+				+ COMMA + GROSS_RENT_PERCENT_INCOME_40_49
+				+ COMMA + GROSS_RENT_PERCENT_INCOME_50_PLUS
+				+ FOR + COUNTY + DESCHUTES 
 				+ IN + STATE + OREGON
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xmlHttp = new XMLHttpRequest();
 xmlHttp.open( "GET", FINAL_URL + API_KEY, false ); // false for synchronous request
 xmlHttp.send( null );
-// var parsed = JSON.parse(xmlHttp.responseText)
-console.log(xmlHttp.responseText)
+var parsed = JSON.parse(xmlHttp.responseText)
+console.log("GROSS_RENT_TOTAL: " + parsed[1][0])
+console.log("GROSS_RENT_PERCENT_INCOME_30_34: " + parsed[1][1])
+console.log("GROSS_RENT_PERCENT_INCOME_35_39: " + parsed[1][2])
+console.log("GROSS_RENT_PERCENT_INCOME_40_49: " + parsed[1][3])
+console.log("GROSS_RENT_PERCENT_INCOME_50_PLUS: " + parsed[1][4])
