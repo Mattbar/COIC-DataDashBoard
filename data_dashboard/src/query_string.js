@@ -1,13 +1,5 @@
-//MAX 500 QUERIES PER API KEY PER DAY
-//we'll want to cache results for each possible query
+const API_KEY = '&key='
 
-//===================================================================
-/*
-
-NEED TO ADD const API_KEY after figuring out value hashing for github
-
-*/
-//===================================================================
 const URL = 'https://api.census.gov/data/'
 const YEAR = '2018/'
 const DATA_SET = 'acs/acs1'
@@ -41,28 +33,14 @@ const DESCHUTES = '017'
 const CROOK = '013'
 const JEFFERSON = '031'
 
-
-// const FINAL_URL = BASE_URL + GET + VARIABLE_MALES_30_TO_34 + FOR + ALL_STATES
-// const FINAL_URL = BASE_URL + GET + MED_SEL_OWN_COST + FOR + OREGON
-// const FINAL_URL = BASE_URL + GET + TOTAL_WHITE_MALES + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-// const FINAL_URL = BASE_URL + GET + GROSS_RENT_TOTAL + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-// const FINAL_URL = BASE_URL + GET + GROSS_RENT_PERCENT_INCOME_30_34 + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-// const FINAL_URL = BASE_URL + GET + GROSS_RENT_PERCENT_INCOME_35_39 + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-// const FINAL_URL = BASE_URL + GET + GROSS_RENT_PERCENT_INCOME_40_49 + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-const FINAL_URL = BASE_URL + GET + MED_INCOME + COMMA + MED_GROSS_RENT_DOLLARS + FOR + COUNTY + DESCHUTES + IN + STATE + OREGON
-
-
-
-// var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-// var xmlHttp = new XMLHttpRequest();
-// xmlHttp.open( "GET", FINAL_URL + API_KEY, false ); // false for synchronous request
-// xmlHttp.send( null );
-// var response1 = JSON.parse(xhr.responseText);
-// console.log(xmlHttp.responseText)
+var FINAL_URL = BASE_URL 
+				+ GET + MED_INCOME + COMMA + MED_GROSS_RENT_DOLLARS 
+				+ FOR + COUNTY + JEFFERSON 
+				+ IN + STATE + OREGON
 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xmlHttp = new XMLHttpRequest();
 xmlHttp.open( "GET", FINAL_URL + API_KEY, false ); // false for synchronous request
 xmlHttp.send( null );
-var parsed = JSON.parse(xmlHttp.responseText)
-console.log(parsed[1][0]/parsed[1][1])
+// var parsed = JSON.parse(xmlHttp.responseText)
+console.log(xmlHttp.responseText)
